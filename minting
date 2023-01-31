@@ -1,0 +1,17 @@
+VERSION BUILD=12.0.0.2455
+TAB T=1
+URL GOTO=https://opensea.io/assets/new
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:asset[image] CONTENT={{path to image file}}
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:asset[name] CONTENT={{asset name}}
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:asset[description] CONTENT={{asset description}}
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:asset[external_link] CONTENT={{asset external link}}
+TAG POS=1 TYPE=SELECT ATTR=NAME:asset[category_id] CONTENT={{category id}}
+TAG POS=1 TYPE=SELECT ATTR=NAME:asset[collection_id] CONTENT={{collection id}}
+TAG POS=1 TYPE=INPUT:SUBMIT ATTR=NAME:commit&&VALUE:Create<SP>Asset
+WAIT SECONDS=3
+TAG POS=1 TYPE=A ATTR=TXT:Publish<SP>Asset
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:SUBMIT ATTR=NAME:commit&&VALUE:Publish<SP>Asset
+WAIT SECONDS=5
